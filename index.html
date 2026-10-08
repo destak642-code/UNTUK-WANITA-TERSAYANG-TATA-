@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Tata ❤️</title>
+
+<style>
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#countdown div {
+  background: rgba(255,255,255,0.15);
+  padding: 12px;
+  border-radius: 12px;
+  min-width: 55px;
+}
+
+#countdown span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#countdown small {
+  font-size: 11px;
+  opacity: 0.8;
+}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #5b4650;
+
+    background: linear-gradient(
+        to bottom,
+        #ffd9e8 0%,
+        #fff1f6 35%,
+        #ffffff 70%,
+        #ffffff 100%
+    );
+
+    background-attachment: fixed;
+    overflow-x: hidden;
+    transition: background 1s ease;
+}
+
+/* BACKGROUND */
+.bg-hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear infinite;
+    opacity: .55;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .6;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.small-text {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b9788a;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(60px, 14vw, 120px);
+    line-height: .9;
+    color: #8f4059;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #765963;
+    max-width: 500px;
+    margin: auto;
+}
+
+.scroll-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 28px;
+    border: 1px solid #d59aaa;
+    border-radius: 50px;
+    color: #8f4059;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.scroll-btn:hover {
+    background: #8f4059;
+    color: white;
+}
+
+/* ENVELOPE */
+.letter-section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.envelope-wrapper {
+    text-align: center;
+}
+
+.envelope {
+    width: 310px;
+    height: 210px;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    transition: transform .4s;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e8aebe;
+    border-radius: 5px;
+    box-shadow: 0 20px 40px rgba(100,40,60,.15);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 155px solid transparent;
+    border-right: 155px solid transparent;
+    border-top: 115px solid #d98fa4;
+    transform-origin: top;
+    transition: transform .8s;
+    z-index: 3;
+}
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open .envelope-paper {
+    transform: translateY(-110px);
+    z-index: 5;
+}
+.envelope-paper {
+    position: absolute;
+    background: white;
+    width: 88%;
+    height: 80%;
+    left: 6%;
+    top: 10%;
+    z-index: 2;
+    padding: 20px;
+    border-radius: 3px;
+    transition: transform .8s;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .envelope-paper {
+    transform: translateY(-110px);
+}
+
+.seal {
+    position: absolute;
+    z-index: 5;
+    width: 55px;
+    height: 55px;
+    background: #8f4059;
+    color: white;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: .5s;
+}
+
+.envelope.open .seal {
+    opacity: 0;
+}
+
+.click-text {
+    margin-top: 45px;
+    color: #9c6676;
+    font-size: 14px;
+}
+
+/* LETTER */
+.letter {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.letter-card {
+    background: rgba(255,255,255,.85);
+    padding: clamp(30px, 7vw, 70px);
+    border-radius: 20px;
+    box-shadow: 0 20px 70px rgba(100,40,60,.08);
+}
+
+.letter-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #8f4059;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.letter-card p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 22px;
+    color: #624952;
+}
+
+.highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px !important;
+    color: #8f4059 !important;
+    text-align: center;
+    margin: 40px 0 !important;
+}
+
+/* PHOTO */
+.photo-section {
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+    color: #8f4059;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #8d6973;
+    margin-bottom: 45px;
+}
+
+.photos {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photo {
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f2dce2;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.photo:hover img {
+    transform: scale(1.06);
+}
+
+/* QUESTION */
+.question-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.question-card {
+    max-width: 700px;
+}
+
+.question-card h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 9vw, 80px);
+    color: #8f4059;
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.question-card p {
+    color: #765963;
+    line-height: 1.8;
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#noBtn {
+    position: relative;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.yes {
+    background: #8f4059;
+    color: white;
+}
+
+.yes:hover {
+    transform: scale(1.08);
+    background: #713246;
+}
+
+.also-yes {
+    background: #f1c5d1;
+    color: #7b3b4e;
+}
+
+.also-yes:hover {
+    transform: scale(1.08);
+}
+
+/* FINAL */
+.final-message {
+    display: none;
+    margin-top: 45px;
+    animation: appear 1s ease;
+}
+
+.final-message.show {
+    display: block;
+}
+
+.final-message h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 50px;
+    color: #8f4059;
+    margin-bottom: 15px;
+}
+
+.final-message p {
+    font-size: 16px;
+    line-height: 2;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MUSIC */
+.music-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: #8f4059;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(80,30,50,.2);
+}
+
+/* MOBILE */
+@media(max-width: 650px) {
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 350px;
+    }
+
+    .envelope {
+        width: 280px;
+        height: 190px;
+    }
+
+    .envelope-flap {
+        border-left-width: 140px;
+        border-right-width: 140px;
+        border-top-width: 105px;
+    }
+
+    .letter-card h2 {
+        font-size: 42px;
+    }
+}
+/* SEMBUNYIKAN WEBSITE SEBELUM PASSWORD BENAR */
+#website {
+    display: none;
+}
+/* KOLOM PERTANYAAN */
+#answer,
+#password {
+    width: 90%;
+    max-width: 450px;
+    height: 55px;
+    padding: 0 20px;
+    margin: 10px auto;
+    display: block;
+
+    border: 2px solid #e8aebe;
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.9);
+    color: #6b3b4b;
+
+    font-size: 16px;
+    text-align: center;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+#answer:focus,
+#password:focus {
+    border-color: #8f4059;
+    box-shadow: 0 0 15px rgba(143,64,89,0.2);
+}
+
+#answer::placeholder,
+#password::placeholder {
+    color: #9c7782;
+}
+#lockScreen button {
+    display: block;
+    width: 85%;
+    max-width: 350px;
+    height: 60px;
+    margin: 20px auto 0;
+
+    border: none;
+    border-radius: 35px;
+
+    background: #8f4059;
+    color: white;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(143,64,89,0.3);
+}
+/* MINI GAME KLIK HATI */
+.heart-game {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255, 182, 193, 0.15);
+    border: 2px solid #ffb6c1;
+}
+
+.game-heart {
+    position: absolute;
+    border: none;
+    background: none;
+    font-size: 40px;
+    cursor: pointer;
+    animation: heartPop 0.3s ease;
+}
+
+@keyframes heartPop {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.heart-result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.secret-btn {
+    display: none;
+    margin: 15px auto;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #ff69b4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* =========================
+   MODE MALAM ROMANTIS
+========================= */
+
+#nightModeBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    border: none;
+    border-radius: 30px;
+    padding: 12px 18px;
+
+    background: rgba(255,255,255,0.15);
+    color: white;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+    font-size: 14px;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+}
+
+/* background malam */
+body.night-mode {
+    background:
+        radial-gradient(circle at 50% 20%,
+        rgba(255,220,150,0.18),
+        transparent 25%),
+        radial-gradient(circle at 20% 80%,
+        rgba(120,90,255,0.18),
+        transparent 30%),
+        linear-gradient(135deg,
+        #050511,
+        #11091d,
+        #080514);
+
+    transition: background 1s ease;
+}
+
+/* bintang */
+.night-star {
+    position: fixed;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation: starTwinkle 2s infinite alternate;
+}
+
+@keyframes starTwinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+/* cahaya lampu romantis */
+body.night-mode::before {
+    content: "";
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    left: 50%;
+    top: 15%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255,220,160,0.18),
+        transparent 70%
+    );
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation: romanticGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes romanticGlow {
+    from {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+}
+/* =========================
+   KARTU SAAT MODE MALAM
+========================= */
+
+body.night-mode .letter-card {
+    background: rgba(20, 12, 25, 0.88);
+    box-shadow:
+        0 20px 80px rgba(0,0,0,0.5),
+        0 0 40px rgba(255,190,220,0.08);
+}
+        /* =========================
+   AWAN MODE SIANG
+========================= */
+
+.cloud {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+
+    font-size: 80px;
+    opacity: 0.75;
+
+    filter: blur(1px);
+
+    animation: cloudMove linear infinite;
+}
+
+@keyframes cloudMove {
+
+    from {
+        transform: translateX(-200px);
+    }
+
+    to {
+        transform: translateX(calc(100vw + 200px));
+    }
+
+}
+/* =========================
+   SURPRISE SCREEN
+========================= */
+
+#surpriseScreen {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,182,193,0.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #120713,
+            #2b0d25,
+            #0b0714
+        );
+
+    z-index: 99999;
+
+    padding: 25px;
+
+    overflow-y: auto;
+}
+
+#surpriseScreen.show {
+    display: flex;
+    animation: surpriseAppear 1.2s ease;
+}
+
+.surprise-content {
+    max-width: 650px;
+}
+
+.surprise-heart {
+    font-size: 70px;
+
+    animation:
+        surpriseHeart 1.2s ease-in-out infinite alternate;
+}
+
+.surprise-content h1 {
+    margin: 20px 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(42px, 10vw, 80px);
+
+    line-height: .95;
+
+    color: #ffb6d2;
+
+    text-shadow:
+        0 0 20px rgba(255,182,210,.5);
+}
+
+.surprise-name {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 30px;
+
+    color: white;
+}
+
+.surprise-line {
+    width: 100px;
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: #ffb6d2;
+}
+
+.surprise-content p {
+    color: #eadde5;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 20px auto;
+}
+
+.surprise-content h2 {
+    margin-top: 35px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 40px;
+
+    color: #ffb6d2;
+}
+
+.surprise-content button {
+    margin-top: 20px;
+
+    padding: 16px 30px;
+
+    border: none;
+    border-radius: 40px;
+
+    background: #ff8fb5;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(255,105,180,.3);
+
+    transition: .3s;
+}
+
+.surprise-content button:hover {
+    transform: scale(1.08);
+}
+
+#hugMessage {
+    font-size: 20px !important;
+    color: #ffb6d2 !important;
+}
+
+@keyframes surpriseAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes surpriseHeart {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+/* =========================
+   SURPRISE SCREEN - RAPI
+========================= */
+
+#surpriseScreen {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100dvh;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,150,200,0.18),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #120713,
+            #2b0d25,
+            #080510
+        );
+
+    z-index: 999999;
+
+    overflow-y: auto;
+}
+
+#surpriseScreen.show {
+    display: flex;
+    animation: surpriseAppear 1s ease;
+}
+
+.surprise-content {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+}
+
+.surprise-heart {
+    font-size: 65px;
+    margin-bottom: 10px;
+
+    animation:
+        surpriseHeart 1s ease-in-out infinite alternate;
+}
+
+.surprise-content h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(42px, 12vw, 75px);
+
+    line-height: 0.95;
+
+    margin: 10px 0 20px;
+
+    color: #ffb6d2;
+
+    text-shadow:
+        0 0 20px rgba(255,182,210,.5);
+}
+
+.surprise-name {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 28px;
+
+    color: white;
+
+    margin: 10px 0;
+}
+
+.surprise-line {
+    width: 80px;
+    height: 2px;
+
+    margin: 20px auto;
+
+    background: #ffb6d2;
+}
+
+.surprise-content p {
+    color: #eadde5;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin: 18px auto;
+}
+
+.surprise-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(32px, 8vw, 45px);
+
+    color: #ffb6d2;
+
+    margin: 30px 0 10px;
+}
+
+.surprise-content button {
+    margin-top: 20px;
+
+    padding: 16px 32px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #ff8fb5;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(255,105,180,.35);
+
+    transition: .3s;
+}
+
+.surprise-content button:active {
+    transform: scale(0.95);
+}
+
+#hugMessage {
+    font-size: 18px !important;
+    line-height: 1.8;
+    color: #ffb6d2 !important;
+}
+
+@media (max-width: 650px) {
+
+    .surprise-content {
+        padding: 25px 10px;
+    }
+
+    .surprise-heart {
+        font-size: 55px;
+    }
+
+    .surprise-content p {
+        font-size: 14px;
+    }
+
+}
+
+.final-photo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.final-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.final-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0.7)
+  );
+  color: white;
+}
+
+.small-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.final-overlay h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  margin: 5px 0 15px;
+}
+
+.final-text {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.signature {
+  margin-top: 25px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+}
+
+.heartbeat {
+  display: inline-block;
+  font-size: 48px;
+  animation: heartbeat 1.2s infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 100, 0.5));
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.3);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.3);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.love-message {
+  margin-top: 20px;
+  font-size: 21px;
+  opacity: 0;
+  animation: loveAppear 2s ease forwards;
+  animation-delay: 2s;
+}
+
+@keyframes loveAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div id="lockScreen">
+  <h2>💌 Untuk Tata</h2>
+
+  <p>Surat ini baru bisa dibuka pada 11 Oktober 2026 ❤️</p>
+  <div id="countdown">
+  <div><span id="days">0</span><small>Hari</small></div>
+  <div><span id="hours">0</span><small>Jam</small></div>
+  <div><span id="minutes">0</span><small>Menit</small></div>
+  <div><span id="seconds">0</span><small>Detik</small></div>
+</div>
+  
+<input type="text" id="answer" placeholder="Apa makanan yang kita suka?">
+
+  <input type="text" id="password" placeholder="Bulan apa kita bakal ketemu?">
+  
+  <button onclick="checkAccess()">Buka Surat 💗</button>
+
+  <p id="error"></p>
+</div>
+
+
+<script>
+function checkAccess() {
+  const now = new Date();
+  const openDate = new Date("2026-10-11T00:00:00");
+
+  const password = document.getElementById("password").value;
+  const answer = document.getElementById("answer").value.trim().toUpperCase();
+  
+
+  if (now < openDate) {
+    document.getElementById("error").innerText =
+      "💗 Belum waktunya dibuka sayangkuuu. Coba lagi tanggal 11 Oktober 2026 yaa princess tataaa.";
+    return;
+  }
+
+  if (password !== "JULI") {
+    document.getElementById("error").innerText =
+      "❌ KOK SALAH SIH, DIINGET LAGI !!!.";
+    return;
+  }
+
+  if (answer !== "AYAM GEPREK") {
+    document.getElementById("error").innerText =
+      "❌ KOK SALAH SIH, DIINGET LAGI.";
+    return;
+  }
+
+  document.getElementById("lockScreen").style.display = "none";
+  document.getElementById("website").style.display = "block";
+  const music = document.getElementById("music");
+
+music.currentTime = 0;
+
+music.play().then(() => {
+    playing = true;
+    document.getElementById("musicButton").innerHTML = "❚❚";
+}).catch(() => {
+    console.log("Musik menunggu interaksi pengguna.");
+});
+}
+</script>
+<script>
+const targetDate = new Date("2026-10-11T00:00:00").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    document.getElementById("days").innerText = "0";
+    document.getElementById("hours").innerText = "0";
+    document.getElementById("minutes").innerText = "0";
+    document.getElementById("seconds").innerText = "0";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+<div id="website">
+<button id="nightModeBtn" onclick="toggleNightMode()">
+    🌙 Mode Malam
+</button>
+
+<div id="nightStars"></div>
+<!-- FLOATING HEARTS -->
+<div class="bg-hearts" id="hearts"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="small-text">
+            Sebuah surat untuk seseorang
+        </div>
+
+        <h1>Tata</h1>
+
+        <p>
+            Ada sesuatu yang sudah lama ingin aku sampaikan.
+            Kali ini aku ingin mengatakannya dengan cara yang berbeda.
+        </p>
+
+        <a href="#letter" class="scroll-btn">
+            Baca suratku ↓ 
+          
+        </a>
+
+    </div>
+    
+</section>
+
+
+<!-- ENVELOPE -->
+<section class="letter-section">
+
+    <div class="envelope-wrapper">
+
+        <div class="envelope" id="envelope" onclick="openLetter()">
+
+            <div class="envelope-body"></div>
+
+            <div class="envelope-paper">
+                <div style="font-family:'Cormorant Garamond';font-size:25px;color:#8f4059;">
+                    Untuk Tata ❤️
+                </div>
+            </div>
+
+            <div class="envelope-flap"></div>
+
+            <div class="seal">♥</div>
+
+        </div>
+
+        <div class="click-text">
+            Klik amplopnya untuk membuka surat
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+<section class="letter" id="letter">
+
+    <div class="letter-card">
+
+        <h2>Untuk Yunita Altovunissa,</h2>
+
+        <p>
+            taaa, aku sebenarnya udah cukup lama mikirin gimana
+            caranya nyampaikan ini ke kamu tataa maniss ❤️
+        </p>
+
+        <p>
+            Ada banyak hal yang ingin aku ceritakan, tapi semakin
+            aku mencoba mencari kata-kata yang tepat, semakin aku
+            sadar kalau perasaan ini sebenarnya sederhana.
+        </p>
+
+        <p>
+            Aku nyaman sama kamu,
+            Aku senang ngobrol sama kamu,
+            Aku senang mendengar cerita kamu.
+            Dan gatau sejak kapan, aku jadi terbiasa cari
+            nama tataa di antara banyaknya notifikasi (ga banyak sih).
+        </p>
+
+        <p>
+            Awalnya mungkin hanya rasa nyaman.
+            Tapi semakin lama kita dekat, perasaan itu berubah
+            menjadi sesuatu yang jauh lebih besar.
+        </p>
+
+        <p class="highlight">
+            "Sampai akhirnya aku sadar...
+            aku jatuh cinta sama kamu."
+        </p>
+
+        <p>
+            Aku suka banyak hal tentang kamu.
+            kamu bukan sekedar cantikk doang taaa.
+            cara kamu bercanda, cara kamu cerita,
+            cara kamu menjadi diri sendiri,
+            senyum kamu, sisi manis kamu,
+            bahkan sisi kamu yang mungkin menurut kamu
+            kurang sempurna.
+        </p>
+
+        <p>
+            Aku nggak cuma ingin ada ketika kamu bahagia.
+            Aku juga ingin tetap ada ketika kamu sedih,
+            capek, bad mood, atau ketika kamu cuma ingin diam.
+        </p>
+
+        <p>
+            Aku ingin menjadi seseorang yang bisa kamu cari
+            ketika kamu punya cerita.
+            Seseorang yang bisa mendengarkan kamu.
+            Seseorang yang bisa membuat kamu merasa dihargai
+            dan nggak sendirian.
+         </p>
+         
+         <p>
+            SEBELUM LANJUT BACA, MAIN GAME DULU YUK BIAR GAK BOSEN CINTAKU ❤️
+        </p>
+<!-- MINI GAME KLIK HATI -->
+<div class="heart-game">
+
+    <h2>💗 Mini Game untuk Tata</h2>
+
+    <p>
+        Tata, coba klik semua hati Desta ❤️
+    </p>
+
+    <h3>
+        ❤️ <span id="heartScore">0</span> / 10
+    </h3>
+
+    <div class="game-area" id="heartGameArea"></div>
+
+    <div class="heart-result" id="heartResult">
+        Ayo Tata, cari hatinya 🥺❤️
+    </div>
+
+    <button class="secret-btn" id="secretButton">
+        💌 Buka Pesan Rahasia
+    </button>
+
+</div>
+        <p>
+            Aku tahu kita LDR.
+            Aku tahu jarak kadang membuat semuanya tidak mudah.
+            Kita nggak selalu bisa bertemu ketika sedang ingin
+            ditemani.
+        </p>
+
+        <p>
+            Tapi anehnya, walaupun ada jarak,
+            kamu tetap terasa begitu dekat buat aku.
+        </p>
+
+        <p>
+            Karena itu aku nggak ingin memberikan kamu janji
+            bahwa hubungan kita nanti akan selalu sempurna.
+        </p>
+
+        <p>
+            Yang bisa aku janjikan adalah aku akan terus berusaha.
+            Berusaha memahami tataaa,
+            berusaha mendengarkan tataa,
+            berusaha menjaga perasaan tataaa altovunissaa cintaku ❤️
+            Dan ketika ada masalah, aku ingin kita menyelesaikannya
+            bersama-sama.
+        </p>
+
+        <p class="highlight">
+            Aku nggak mencari seseorang yang sempurna.
+            Aku cuma ingin seseorang yang ingin berjalan
+            bersamaku.
+        </p>
+
+        <p>
+            Dan orang itu...
+            aku harap adalah kamu.
+        </p>
+
+        <p>
+            Tataaa, aku ngetik semua ini bukan untuk buat kamu
+            merasa harus menjawab sesuai apa yang aku mauu.
+        </p>
+
+        <p>
+            Aku cuma ingin jujur.
+            Aku ingin tataa tahu apa yang sebenarnya ada
+            di dalam hati aku.
+        </p>
+
+        <p>
+            Kalau kamu bersedia, aku ingin mengenal kamu lebih jauh.
+            Aku ingin mendengar lebih banyak cerita kamu, 
+            aku ingin menjadi bagian dari hari-hari kamu, 
+            dan aku ingin kita membuat cerita kita sendiri.
+        <p>
+            Makasii yaaa tataaaaa udahhh datengg ke kehidupann akuu yangg tadinya biasaa ajaa, 
+            sekarangg jadii luar biasaa dan berwarnaa bangett.
+            Akuu mauu kitaa bisaa barengg' sampaii kapanpunn yaa cintaku, maniskuu, duniakuu, imutkuu, cantikkuuu, TATAKUUUU ❤️ 
+        </p>
+        
+        <p> 
+             Mungkinn akuu gabisa sampein semua yang aku rasain lewatt ketikann inii, tapii perluu tataa tahuu
+             aku benerrr-benerrr mau samaa kamuu teruss cintaaaa.
+        </p>
+
+        <p>
+             I LOVE YOU YUNITAA ❤️
+        <p class="highlight">
+            Jadi sekarang aku cuma punya satu pertanyaan...
+        </p>
+
+        <p style="text-align:center;font-family:'Cormorant Garamond';font-size:32px;color:#8f4059;">
+            Tataaaa yang cantikkk apakahh kamuu bersediaa mengizinkann akuu menjadi orang yang selalu menemanii kamuu?
+            P A C A R ? LEBIH DARI ITUUU
+        </p>
+
+        <p style="text-align:center;">
+            ❤️
+        </p>
+
+        <p style="text-align:right;margin-top:50px;">
+            — Desta Kesuma 
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO SECTION -->
+<section class="photo-section">
+
+    <div class="section-title">
+        Tentang Kamu
+    </div>
+
+    <div class="section-subtitle">
+        Beberapa kenangan yang ingin aku simpan.
+    </div>
+
+    <div class="photos">
+
+        <!-- GANTI URL FOTO DI BAWAH -->
+        <div class="photo">
+            <img src="IMG-20260821-WA0037.jpg" alt="Foto Tata">
+        </div>
+
+        <div class="photo">
+            <img src="IMG-20260824-WA0038.jpg" alt="Foto Tata">
+        </div>
+
+        <div class="photo">
+            <img src="IMG-20260825-WA0064.jpg" alt="Foto Tata">
+        </div>
+        
+        <div class="photo">
+            <img src="IMG-20260913-WA0177.jpg" alt="Foto Tata">
+        </div>
+        
+        <div class="photo">
+            <img src="IMG-20260927-WA0067.jpg" alt="Foto Tata">
+        </div>
+        
+        <div class="photo">
+            <img src="IMG-20260928-WA0008.jpg" alt="Foto Tata">
+        </div>
+        
+        <div class="photo">
+            <img src="IMG-20261006-WA0074.jpg" alt="Foto Tata">
+        </div>
+        
+    </div>
+
+</section>
+
+
+<!-- QUESTION -->
+<section class="question-section">
+
+    <div class="question-card">
+
+        <div class="small-text">
+            Jadi...
+        </div>
+
+        <h2>
+            Tata,<br>
+            mau jadi istrikuu?, eh maksudnya pacarkuu?
+        </h2>
+
+        <p>
+            Gakk perlu buru-buru jawabnyaa.
+            Aku cuma mau tataa tauu apa yang ada di dalam hatiku.
+        </p>
+
+        <div class="buttons">
+
+    <button class="btn yes" onclick="sayYes()">
+        IYA ❤️
+    </button>
+
+    <button class="btn also-yes" id="noBtn" onclick="sayNo()">
+        TIDAK 🥺
+    </button>
+
+</div>
+
+        <div class="final-message" id="finalMessage">
+
+            <h3>YAY! ❤️</h3>
+
+            <p>
+                Kalau tataa benar-benar milih desta,
+                mulai hari ini kita buat cerita yang
+                panjang, indah, dan penuh hal-hal kecil
+                yang bisa kita kenang bersama.
+            </p>
+
+            <p style="margin-top:20px;">
+                Aku sayang kamu, Tataaa ❤️❤️
+                <br>
+                — Desta Kesuma
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- SURPRISE SCREEN -->
+<div id="surpriseScreen">
+
+    <div class="surprise-content">
+
+        <div class="surprise-heart">❤️</div>
+
+        <h1>
+            SELAMAT DATANG<br>
+            DI CERITA KITA
+        </h1>
+
+        <p class="surprise-name">
+            Tata & Desta
+        </p>
+
+        <div class="surprise-line"></div>
+
+        <p>
+            Kalau sampai di sini berarti...
+            <br>
+            Tata benar-benar memilih Desta. 🥺❤️
+        </p>
+
+        <p>
+            Mulai hari ini, yuk kita bikin
+            cerita yang lebih panjang,
+            lebih banyak tawa,
+            lebih banyak kenangan,
+            dan lebih banyak "aku sayang kamu".
+        </p>
+
+        <h2>
+            I LOVE YOU, TATA ❤️
+        </h2>
+
+        <button onclick="hugTata()">
+            🤍 Peluk Desta
+        </button>
+
+        <p id="hugMessage"></p>
+
+    </div>
+
+</div>
+
+<!-- MUSIC BUTTON -->
+<button class="music-btn" onclick="toggleMusic()" id="musicButton">
+    ♫
+</button>
+
+<!--
+    GANTI "music.mp3" DENGAN FILE LAGU KAMU.
+    Taruh music.mp3 di folder yang sama dengan index.html.
+-->
+<audio id="music" autoplay loop>
+  <source src="Daniel Caesar H.E.R. - Best Part, a Visual.mp3" type="audio/mpeg">
+</audio>
+</div>
+
+<script>
+
+/* =========================
+   OPEN LETTER
+========================= */
+
+function openLetter() {
+
+    const envelope = document.getElementById("envelope");
+
+    envelope.classList.toggle("open");
+
+    if (envelope.classList.contains("open")) {
+
+        setTimeout(() => {
+
+            document.getElementById("letter")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }, 1000);
+
+    }
+
+}
+
+
+/* =========================
+   YES BUTTON
+========================= */
+
+function sayYes() {
+
+    // Tampilkan efek hati
+    createHeartExplosion();
+
+    // Tunggu sebentar supaya efek hati terlihat
+    setTimeout(() => {
+
+        const surprise =
+            document.getElementById("surpriseScreen");
+
+        surprise.classList.add("show");
+
+        // Hujan hati
+        createSurpriseHearts();
+
+        // Scroll ke atas
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }, 1200);
+}
+
+/* =========================
+   NO BUTTON - KABUR
+========================= */
+
+let noClickCount = 0;
+
+function sayNo() {
+
+    const noBtn = document.getElementById("noBtn");
+
+    const messages = [
+        "Yakin gamau? 🥺",
+        "Beneran? 😭",
+        "Masa iya?",
+        "Coba pikir lagi 💗",
+        "Yakin banget?",
+        "Jangan nolak aku 🥺",
+        "Terakhir nih... ❤️"
+    ];
+
+    // Ganti tulisan
+    noBtn.innerText =
+        messages[Math.min(noClickCount, messages.length - 1)];
+
+    noClickCount++;
+
+    // Pastikan tombol bisa bergerak di layar HP
+    noBtn.style.position = "fixed";
+
+    const maxX =
+        window.innerWidth - noBtn.offsetWidth - 20;
+
+    const maxY =
+        window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x =
+        10 + Math.random() * Math.max(maxX - 10, 10);
+
+    const y =
+        10 + Math.random() * Math.max(maxY - 10, 10);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createFloatingHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.fontSize =
+        (10 + Math.random() * 20) + "px";
+
+    heart.style.animationDuration =
+        (7 + Math.random() * 8) + "s";
+
+    heart.style.animationDelay =
+        Math.random() * 5 + "s";
+
+    document
+        .getElementById("hearts")
+        .appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 15000);
+
+}
+
+setInterval(createFloatingHeart, 700);
+
+
+/* =========================
+   HEART EXPLOSION
+========================= */
+
+function createHeartExplosion() {
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "♥";
+
+        heart.style.position = "fixed";
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+        heart.style.zIndex = "9999";
+        heart.style.pointerEvents = "none";
+        heart.style.fontSize =
+            (15 + Math.random() * 25) + "px";
+
+        const x =
+            (Math.random() - .5) * 700;
+
+        const y =
+            (Math.random() - .5) * 700;
+
+        heart.animate(
+            [
+                {
+                    transform: "translate(-50%, -50%) scale(0)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration: 1200 + Math.random() * 800,
+                easing: "ease-out"
+            }
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 2200);
+
+    }
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+let playing = false;
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById("music");
+
+    const button =
+        document.getElementById("musicButton");
+
+    if (!playing) {
+
+        music.play()
+            .then(() => {
+
+                playing = true;
+                button.innerHTML = "❚❚";
+
+            })
+            .catch(() => {
+
+                alert(
+                    "Tambahkan file music.mp3 ke folder website terlebih dahulu."
+                );
+
+            });
+
+    } else {
+
+        music.pause();
+
+        playing = false;
+
+        button.innerHTML = "♫";
+
+    }
+
+}
+
+
+/* =========================
+   MINI GAME KLIK HATI
+========================= */
+
+let heartScore = 0;
+const totalHearts = 10;
+
+function createGameHeart() {
+
+    const gameArea = document.getElementById("heartGameArea");
+
+    if (!gameArea) return;
+
+    const heart = document.createElement("button");
+
+    heart.className = "game-heart";
+    heart.innerHTML = "❤️";
+    heart.type = "button";
+
+    const maxX = gameArea.clientWidth - 60;
+    const maxY = gameArea.clientHeight - 60;
+
+    heart.style.left =
+        Math.random() * Math.max(maxX, 10) + "px";
+
+    heart.style.top =
+        Math.random() * Math.max(maxY, 10) + "px";
+
+    heart.onclick = function () {
+
+        heartScore++;
+
+        document.getElementById("heartScore").innerText =
+            heartScore;
+
+        heart.remove();
+
+        if (heartScore >= totalHearts) {
+
+            document.getElementById("heartResult").innerHTML =
+                "YAYYY! 🥺❤️ Tata berhasil menemukan semua hati Desta!";
+
+            document.getElementById("secretButton").style.display =
+                "block";
+
+        } else {
+
+            createGameHeart();
+
+        }
+    };
+
+    gameArea.appendChild(heart);
+}
+
+
+/* PESAN RAHASIA */
+
+document.getElementById("secretButton").addEventListener(
+    "click",
+    function () {
+
+        document.getElementById("heartResult").innerHTML =
+            "💌 Tataaa, dari semua hati yang kamu klik... " +
+            "hati desta selaluuu jadiiii yangg inginn samaa kamuuu teruss❤️" +
+            "<br><br>" +
+            "I LOVE YOU, TATA 🥺❤️";
+
+        this.style.display = "none";
+    }
+);
+
+
+/* MULAI GAME */
+
+createGameHeart();
+
+/* =========================
+   MODE MALAM ROMANTIS
+========================= */
+
+let nightMode = false;
+
+function toggleNightMode() {
+
+    nightMode = !nightMode;
+
+    const button =
+        document.getElementById("nightModeBtn");
+
+    document.body.classList.toggle(
+        "night-mode",
+        nightMode
+    );
+
+    if (nightMode) {
+
+        button.innerHTML = "☀️ Mode Siang";
+
+        createNightStars();
+
+    } else {
+
+        button.innerHTML = "🌙 Mode Malam";
+
+        document
+            .querySelectorAll(".night-star")
+            .forEach(star => star.remove());
+    }
+}
+
+function createNightStars() {
+
+    document
+        .querySelectorAll(".night-star")
+        .forEach(star => star.remove());
+
+    for (let i = 0; i < 70; i++) {
+
+        const star =
+            document.createElement("div");
+
+        star.className = "night-star";
+
+        star.style.left =
+            Math.random() * 100 + "vw";
+
+        star.style.top =
+            Math.random() * 100 + "vh";
+
+        star.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        star.style.animationDuration =
+            (1.5 + Math.random() * 2) + "s";
+
+        document.body.appendChild(star);
+    }
+}
+
+/* =========================
+   SURPRISE HEARTS
+========================= */
+
+function createSurpriseHearts() {
+
+    for (let i = 0; i < 35; i++) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.innerHTML =
+            ["❤️", "💗", "💕", "💖"][Math.floor(
+                Math.random() * 4
+            )];
+
+        heart.style.position = "fixed";
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.top = "-50px";
+
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+        heart.style.zIndex = "100000";
+
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        heart.animate(
+            [
+                {
+                    transform:
+                        "translateY(0) rotate(0deg)",
+                    opacity: 1
+                },
+                {
+                    transform:
+                        `translateY(110vh) rotate(${Math.random() * 360}deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration:
+                    4000 + Math.random() * 4000,
+
+                easing: "ease-in"
+            }
+        );
+
+        setTimeout(() => {
+            heart.remove();
+        }, 8000);
+    }
+}
+
+
+/* =========================
+   PELUK DESTA
+========================= */
+
+function hugTata() {
+
+    document.getElementById("hugMessage").innerHTML =
+        "🤗 Peluk virtual diterimaaa!<br><br>" +
+        "Sini Tataaa... jangan pergi dulu 🥺❤️<br>" +
+        "Desta sayang banget sama Tata.";
+
+    createSurpriseHearts();
+}
+
+</script>
+<!-- FOTO TERAKHIR -->
+<section id="finalPhoto" class="final-photo">
+  <img src="IMG-20260824-WA0001.jpg" alt="Tata">
+
+  <div class="final-overlay">
+
+  <p class="small-text">Untuk orang yang paling aku sayang...</p>
+
+  <div class="heartbeat">❤️</div>
+
+  <h2>My Favorite Person</h2>
+
+  <p class="final-text">
+    Dari sekian banyak orang di dunia,<br>
+    aku tetap memilih Tata.
+  </p>
+
+  <p class="love-message">
+    Aku sayang banget sama Tata. ❤️
+  </p>
+
+  <p class="signature">— Desta ❤️</p>
+
+  <!-- Suara detak jantung -->
+  <audio id="heartbeatSound" preload="auto">
+    <source src="heartbeat.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+</section>
+</body>
+</html>
